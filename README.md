@@ -31,8 +31,7 @@ It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby) and amended by 
   1. [Strings](#strings)
   1. [Regular Expressions](#regular-expressions)
   1. [Percent Literals](#percent-literals)
-  1. [Rails](#rails)
-    1. [Scopes](#scopes)
+  1. [Scopes](#scopes)
   1. [Be Consistent](#be-consistent)
   1. [Translation](#translation)
 
@@ -1580,32 +1579,8 @@ In either case:
     echo = %x(echo `date`)
     ```
 
-## Rails
-
-* <a name="next-line-return"></a>When immediately returning after calling
-    `render` or `redirect_to`, put `return` on the next line, not the same line.
-    <sup>[[link](#next-line-return)]</sup>
-
-    ```ruby
-    # bad
-    render :text => 'Howdy' and return
-
-    # good
-    render :text => 'Howdy'
-    return
-
-    # still bad
-    render :text => 'Howdy' and return if foo.present?
-
-    # good
-    if foo.present?
-      render :text => 'Howdy'
-      return
-    end
-    ```
-
-### Scopes
-* <a name="scope-lambda"></a>When defining ActiveRecord model scopes, wrap the
+## Scopes
+* <a name="scope-lambda"></a>When defining data model scopes, wrap the
     relation in a `lambda`.  A naked relation forces a database connection to be
     established at class load time (instance startup).
     <sup>[[link](#scope-lambda)]</sup>
