@@ -1,10 +1,8 @@
 # Ruby Style Guide
 
-This is Airbnb's Ruby Style Guide.
+This is Wearisma Ruby Style Guide.
 
-It was inspired by [GitHub's guide](https://web.archive.org/web/20160410033955/https://github.com/styleguide/ruby) and [Bozhidar Batsov's guide][bbatsov-ruby].
-
-Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
+It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby).
 
 ## Table of Contents
   1. [Whitespace](#whitespace)
@@ -1748,8 +1746,3 @@ In either case:
 [ruby-freeze]: http://blog.honeybadger.io/when-to-use-freeze-and-frozen-in-ruby/
 [avoid-else-return-early]: http://blog.timoxley.com/post/47041269194/avoid-else-return-early
 
-## Translation
-
-  This style guide is also available in other languages:
-
-  - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [1c7/ruby-airbnb](https://github.com/1c7/ruby-airbnb)
