@@ -2,7 +2,7 @@
 
 This is Wearisma Ruby Style Guide.
 
-It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby).
+It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby) and amended by Wearisma.
 
 ## Table of Contents
   1. [Whitespace](#whitespace)
