@@ -276,13 +276,6 @@ It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby) and amended by 
     multiple newlines at the end of a file.
     <sup>[[link](#trailing-newline)]</sup>
 
-## Line Length
-
-* Keep each line of code to a readable length. Unless
-  you have a reason to, keep lines to fewer than 100 characters.
-  ([rationale](./rationales.md#line-length))<sup>
-  [[link](#line-length)]</sup>
-
 ## Commenting
 
 > Though a pain to write, comments are absolutely vital to keeping our code
@@ -301,96 +294,14 @@ Portions of this section borrow heavily from the Google
 
 ### File/class-level comments
 
-Every class definition should have an accompanying comment that describes what
-it is for and how it should be used.
-
-A file that contains zero classes or more than one class should have a comment
-at the top describing its contents.
-
 ```ruby
-# Automatic conversion of one locale to another where it is possible, like
-# American to British English.
-module Translation
-  # Class for converting between text between similar locales.
-  # Right now only conversion between American English -> British, Canadian,
-  # Australian, New Zealand variations is provided.
-  class PrimAndProper
-    def initialize
-      @converters = { :en => { :"en-AU" => AmericanToAustralian.new,
-                               :"en-CA" => AmericanToCanadian.new,
-                               :"en-GB" => AmericanToBritish.new,
-                               :"en-NZ" => AmericanToKiwi.new,
-                             } }
-    end
-
-  ...
-
-  # Applies transforms to American English that are common to
-  # variants of all other English colonies.
-  class AmericanToColonial
-    ...
-  end
-
-  # Converts American to British English.
-  # In addition to general Colonial English variations, changes "apartment"
-  # to "flat".
-  class AmericanToBritish < AmericanToColonial
-    ...
-  end
-```
-
-All files, including data and config files, should have file-level comments.
-
-```ruby
-# List of American-to-British spelling variants.
-#
-# This list is made with
-# lib/tasks/list_american_to_british_spelling_variants.rake.
-#
-# It contains words with general spelling variation patterns:
-#   [trave]led/lled, [real]ize/ise, [flav]or/our, [cent]er/re, plus
-# and these extras:
-#   learned/learnt, practices/practises, airplane/aeroplane, ...
-
-sectarianizes: sectarianises
-neutralization: neutralisation
-...
+# TODO
 ```
 
 ### Function comments
 
-Every function declaration should have comments immediately preceding it that
-describe what the function does and how to use it. These comments should be
-descriptive ("Opens the file") rather than imperative ("Open the file"); the
-comment describes the function, it does not tell the function what to do. In
-general, these comments do not describe how the function performs its task.
-Instead, that should be left to comments interspersed in the function's code.
-
-Every function should mention what the inputs and outputs are, unless it meets
-all of the following criteria:
-
-* not externally visible
-* very short
-* obvious
-
-You may use whatever format you wish. In Ruby, two popular function
-documentation schemes are [TomDoc](http://tomdoc.org/) and
-[YARD](http://rubydoc.info/docs/yard/file/docs/GettingStarted.md). You can also
-just write things out concisely:
-
 ```ruby
-# Returns the fallback locales for the_locale.
-# If opts[:exclude_default] is set, the default locale, which is otherwise
-# always the last one in the returned list, will be excluded.
-#
-# For example:
-#   fallbacks_for(:"pt-BR")
-#     => [:"pt-BR", :pt, :en]
-#   fallbacks_for(:"pt-BR", :exclude_default => true)
-#     => [:"pt-BR", :pt]
-def fallbacks_for(the_locale, opts = {})
-  ...
-end
+# TODO
 ```
 
 ### Block and inline comments
@@ -480,8 +391,7 @@ Thus when you create a TODO, it is almost always your name that is given.
 
 ### Commented-out code
 
-* <a name="commented-code"></a>Never leave commented-out code in our codebase.
-    <sup>[[link](#commented-code)]</sup>
+* Better not to leave commented-out code in our codebase.
 
 ## Methods
 
