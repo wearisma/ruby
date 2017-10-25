@@ -500,33 +500,6 @@ Thus when you create a TODO, it is almost always your name that is given.
     nil?
     ```
 
-* <a name="no-return-parens"></a>If the method doesn't return a value (or we
-    don't care about the return), parentheses are optional. (Especially if the
-    arguments overflow to multiple lines, parentheses may add readability.)
-    <sup>[[link](#no-return-parens)]</sup>
-
-    ```ruby
-    # okay
-    render(:partial => 'foo')
-
-    # okay
-    render :partial => 'foo'
-    ```
-
-In either case:
-
-* <a name="options-no-braces"></a>If a method accepts an options hash as the
-    last argument, do not use `{` `}` during invocation.
-    <sup>[[link](#options-no-braces)]</sup>
-
-    ```ruby
-    # bad
-    get '/v1/reservations', { :id => 54875 }
-
-    # good
-    get '/v1/reservations', :id => 54875
-    ```
-
 ## Conditional Expressions
 
 ### Conditional keywords
@@ -657,23 +630,6 @@ In either case:
       unless x === 10
         ...
       end
-    ```
-
-* <a name="parens-around-conditions"></a>Don't use parentheses around the
-    condition of an `if/unless/while`.
-    <sup>[[link](#parens-around-conditions)]</sup>
-
-    ```ruby
-    # bad
-    if (x > 10)
-      ...
-    end
-
-    # good
-    if x > 10
-      ...
-    end
-
     ```
 
 ### Ternary operator
