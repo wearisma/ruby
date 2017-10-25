@@ -74,13 +74,7 @@ It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby).
     end
 
     # good
-    def self.create_translation(phrase_id,
-                                phrase_key,
-                                target_locale,
-                                value,
-                                user_id,
-                                do_xss_check,
-                                allow_verification)
+    def self.create_translation(phrase_id, phrase_key, target_locale, value, user_id, do_xss_check, allow_verification)
       ...
     end
 
