@@ -34,7 +34,6 @@ It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby) and amended by 
   1. [Percent Literals](#percent-literals)
   1. [Scopes](#scopes)
   1. [Be Consistent](#be-consistent)
-  1. [Translation](#translation)
 
 ## Constant
 No magic number! 🙅🏻
