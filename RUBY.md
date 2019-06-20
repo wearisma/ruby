@@ -52,9 +52,9 @@ No magic number! 🙅🏻
      case year
      when 1850..1889
        'Blues'
-     when 1890..1909 then
+     when 1890..1909
        'Ragtime'
-     when 1910..1929 then
+     when 1910..1929
        'New Orleans Jazz'
      when 1930..1939
        'Swing'
