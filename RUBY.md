@@ -1,29 +1,29 @@
 # Ruby Style Guide
 
-This is Wearisma Ruby Style Guide.
+This is Wearisma Ruby Style Guide.🙌
 
 It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby) and amended by Wearisma.
 
 ## Table of Contents
   1. [Constant](#constant)
   1. [Whitespace](#whitespace)
-    1. [Indentation](#indentation)
-    1. [Inline](#inline)
-    1. [Newlines](#newlines)
+     1. [Indentation](#indentation)
+     1. [Inline](#inline)
+     1. [Newlines](#newlines)
   1. [Line Length](#line-length)
   1. [Commenting](#commenting)
-    1. [File/class-level comments](#fileclass-level-comments)
-    1. [Function comments](#function-comments)
-    1. [Block and inline comments](#block-and-inline-comments)
-    1. [Punctuation, spelling, and grammar](#punctuation-spelling-and-grammar)
-    1. [TODO comments](#todo-comments)
-    1. [Commented-out code](#commented-out-code)
+     1. [File/class-level comments](#fileclass-level-comments)
+     1. [Function comments](#function-comments)
+     1. [Block and inline comments](#block-and-inline-comments)
+     1. [Punctuation, spelling, and grammar](#punctuation-spelling-and-grammar)
+     1. [TODO comments](#todo-comments)
+     1. [Commented-out code](#commented-out-code)
   1. [Methods](#methods)
-    1. [Method definitions](#method-definitions)
-    1. [Method calls](#method-calls)
+     1. [Method definitions](#method-definitions)
+     1. [Method calls](#method-calls)
   1. [Conditional Expressions](#conditional-expressions)
-    1. [Conditional keywords](#conditional-keywords)
-    1. [Ternary operator](#ternary-operator)
+     1. [Conditional keywords](#conditional-keywords)
+     1. [Ternary operator](#ternary-operator)
   1. [Syntax](#syntax)
   1. [Naming](#naming)
   1. [Classes](#classes)
@@ -37,6 +37,18 @@ It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby) and amended by 
 
 ## Constant
 No magic number! 🙅🏻
+
+```ruby
+# bad
+if count > BATCH_LIMIT:
+  return
+
+# good
+BATCH_LIMIT = 20
+if count > BATCH_LIMIT:
+  return
+```
+
 
 ## Whitespace
 
@@ -65,20 +77,30 @@ No magic number! 🙅🏻
      end
     ```
 
-* <a name="align-function-params"></a>Align function parameters either all on
-    the same line or one per line.<sup>[[link](#align-function-params)]</sup>
+* <a name="align-function-params"></a>Align function parameters on the same line or one per line if the total is small than *4*. Otherwise, one per line<sup>[[link](#align-function-params)]</sup>
 
     ```ruby
+    
     # bad
     def self.create_translation(phrase_id, phrase_key, target_locale,
                                 value, user_id, do_xss_check, allow_verification)
       ...
     end
-
-    # good
-    def self.create_translation(phrase_id, phrase_key, target_locale, value, user_id, do_xss_check, allow_verification)
+    
+    # bad
+    def self.create_translation(phrase_id, phrase_key, target_locale, value)
       ...
     end
+    
+    # good
+    def self.create_translation(phrase_id, phrase_key, target_locale)    
+    
+    # good
+    def self.create_translation(
+      phrase_id,
+      phrase_key,
+      target_locale
+    )   
 
     # good
     def self.create_translation(
@@ -92,6 +114,7 @@ No magic number! 🙅🏻
     )
       ...
     end
+
     ```
 
 * <a name="indent-multi-line-bool"></a>Indent succeeding lines in multi-line
