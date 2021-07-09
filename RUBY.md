@@ -10,7 +10,6 @@ It was inspired by [Airbnb Ruby](https://github.com/airbnb/ruby) and amended by 
      1. [Indentation](#indentation)
      1. [Inline](#inline)
      1. [Newlines](#newlines)
-  1. [Line Length](#line-length)
   1. [Commenting](#commenting)
      1. [File/class-level comments](#fileclass-level-comments)
      1. [Function comments](#function-comments)
@@ -77,7 +76,7 @@ if count > BATCH_LIMIT:
      end
     ```
 
-* <a name="align-function-params"></a>Align function parameters on the same line or one per line if the total is small than *4*. Otherwise, one per line<sup>[[link](#align-function-params)]</sup>
+* <a name="align-function-params"></a>Align function parameters on the same line or one per line. When number of parameters is more than *3*, one per line is preferred.<sup>[[link](#align-function-params)]</sup>
 
     ```ruby
     
@@ -114,6 +113,26 @@ if count > BATCH_LIMIT:
     )
       ...
     end
+
+    ```
+    
+* <a name="align-keywords-params"></a>Align keywords parameters<sup>[[link](#align-keywords-params)]</sup>
+
+    ```ruby
+    
+    # bad
+    data = search_data(
+      date_range: date_range,
+      keywords: keywords,
+      countries: countries
+    )
+    
+    # good
+    data = search_data(
+      date_range: date_range,
+      keywords:   keywords,
+      countries:  countries
+    )
 
     ```
 
@@ -397,7 +416,7 @@ good-enough but not perfect.
 
 TODOs should include the string TODO in all caps, followed by the full name
 of the person who can best provide context about the problem referenced by the
-TODO, in parentheses. A colon is optional. A comment explaining what there is
+TODO, in parentheses. A comment explaining what there is
 to do is required. The main purpose is to have a consistent TODO format that
 can be searched to find the person who can provide more details upon request.
 A TODO is not a commitment that the person referenced will fix the problem.
@@ -442,12 +461,22 @@ Thus when you create a TODO, it is almost always your name that is given.
 
     ```ruby
     # bad
-    def obliterate(things, gently = true, except = [], at = Time.now)
+    def obliterate(
+      things,
+      gently = true,
+      except = [],
+      at = Time.now
+    )
       ...
     end
 
     # good
-    def obliterate(things, gently: true, except: [], at: Time.now)
+    def obliterate(
+      things,
+      gently: true,
+      except: [],
+      at: Time.now
+    )
       ...
     end
 
