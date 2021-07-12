@@ -155,6 +155,45 @@ if count > BATCH_LIMIT:
     end
     ```
 
+* <a name="align-hash-keys"></a>Align hash keys<sup>[[link](#align-hash-keys)]</sup>
+
+    ```ruby
+    
+    # bad
+    data = {
+      key_one: value_one,
+      key_two: value_two,
+      key_three: value_three,
+      key_four: value_four,
+      key_five: value_five,
+      key_six: value_six,
+      key_seven: value_seven,
+    }
+
+    # bad, extra new line between = and {
+    data =
+    {
+      key_one:   value_one,
+      key_two:   value_two,
+      key_three: value_three,
+      key_four:  value_four,
+      key_five:  value_five,
+      key_six:   value_six,
+      key_seven: value_seven,
+    }
+
+    # good
+    data = {
+      key_one:   value_one,
+      key_two:   value_two,
+      key_three: value_three,
+      key_four:  value_four,
+      key_five:  value_five,
+      key_six:   value_six,
+      key_seven: value_seven,
+    }
+    ```
+
 ### Inline
 
 * <a name="trailing-whitespace"></a>Never leave trailing whitespace.
